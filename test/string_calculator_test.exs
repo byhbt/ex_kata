@@ -20,6 +20,10 @@ defmodule StringCalculatorTest do
     assert StringCalculator.calc("1,1") == 2
   end
 
+  test "returns 2 given 1,1 has space" do
+    assert StringCalculator.calc("1, 1") == 2
+  end
+
   test "returns 5 given 1,1,3" do
     assert StringCalculator.calc("1,1,3") == 5
   end
@@ -37,8 +41,8 @@ defmodule StringCalculatorTest do
   end
 
   test "raises ArgumentError given negative value" do
-    assert_raise ArgumentError, fn ->
-      assert StringCalculator.calc("1,-1")
+    assert_raise ArgumentError, "-1", fn ->
+      assert StringCalculator.calc("1, -1")
     end
   end
 end
