@@ -14,19 +14,19 @@ defmodule StringCalculator do
   def calc(string) do
     string
     |> String.splitter([",", "\n", "***", "/"])
-    |> Enum.map(fn(v) ->
-      val = case Integer.parse(String.trim(v)) do
-        {intVal, _} -> intVal
-      end
+    |> Enum.map(fn v ->
+      val =
+        case Integer.parse(String.trim(v)) do
+          {int_val, _} -> int_val
+        end
 
       if check_negative(val) do
         raise ArgumentError, "Negative"
       else
         val
       end
-    end
-    )
-    |> Enum.reject(fn(val) -> 
+    end)
+    |> Enum.reject(fn val ->
       val > 1_000
     end)
     |> Enum.sum()
