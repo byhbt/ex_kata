@@ -1,45 +1,20 @@
-# Foobar
+# StringCalculator
 
-- [ ] Sample README structure
-- [ ] License ([https://choosealicense.com](https://choosealicense.com))
-- [ ] Issue template (Bug/Feature Request/Refactor/Small Updates)
-- [ ] Pull Request template
-- [ ] Wiki docs
-- [ ] Github Action setup
+**TODO: Add description**
 
-## Getting Started
+## Installation
 
-### Features
-- Awesome feature A.
-- Awesome feature B.
-### Prerequisites
+If [available in Hex](https://hex.pm/docs/publish), the package can be installed
+by adding `string_calculator` to your list of dependencies in `mix.exs`:
 
-* React 16.8.0
-* npm
-
-### Installation
-
-```sh
-npm install easybase-react
+```elixir
+def deps do
+  [
+    {:string_calculator, "~> 0.1.0"}
+  ]
+end
 ```
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
-
-```bash
-pip install foobar
-
-```
-
-
-## Documentation
-
-We use Github Wiki as the main documentation.
-
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
-
-## License
-
-Distributed under the MIT License. See `LICENSE` for more information.
+Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
+and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
+be found at [https://hexdocs.pm/string_calculator](https://hexdocs.pm/string_calculator).
