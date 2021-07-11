@@ -1,6 +1,6 @@
 defmodule StringCalculator do
   @moduledoc """
-  Documentation for `StringCalculator`.
+  Documentation for `StringCalculator`
   """
 
   def calc("") do
@@ -15,16 +15,11 @@ defmodule StringCalculator do
     string
     |> String.splitter([",", "\n", "***", "/"])
     |> Enum.map(fn v ->
-      val =
-        case Integer.parse(String.trim(v)) do
-          {int_val, _} -> int_val
-        end
-
-      if check_negative(val) do
-        raise ArgumentError, "Negative"
-      else
-        val
-      end
+      String.to_integer(String.trim(v))
+    end)
+    |> check_negative()
+    |> Enum.reject(fn val -> 
+      val < 0
     end)
     |> Enum.reject(fn val ->
       val > 1_000
@@ -32,11 +27,13 @@ defmodule StringCalculator do
     |> Enum.sum()
   end
 
-  defp check_negative(val) do
-    if val < 0 do
-      true
+  defp check_negative(list) do
+    negatives = list |> Enum.filter(&(&1) < 0)
+
+    if negatives == [] do
+      list
     else
-      false
+      raise ArgumentError, Enum.join(negatives, ", ")
     end
   end
 end
