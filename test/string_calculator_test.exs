@@ -25,6 +25,14 @@ defmodule StringCalculatorTest do
     end
   end
 
+  test "ignores larger than 1k value" do
+    assert StringCalculator.calc("1001,2") == 2
+  end
+
+  test "ignoers multi delimiter" do
+    assert StringCalculator.calc("1***2***3") == 6
+  end
+
   test "return 2 given string with breakline 1\n1" do
     assert StringCalculator.calc("1\n1,1") == 3
   end

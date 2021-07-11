@@ -13,7 +13,7 @@ defmodule StringCalculator do
 
   def calc(string) do
     string
-    |> String.splitter([",", "\n"])
+    |> String.splitter([",", "\n", "***", "/"])
     |> Enum.map(fn(v) ->
       val = case Integer.parse(String.trim(v)) do
         {intVal, _} -> intVal
@@ -26,6 +26,9 @@ defmodule StringCalculator do
       end
     end
     )
+    |> Enum.reject(fn(val) -> 
+      val > 1_000
+    end)
     |> Enum.sum()
   end
 
