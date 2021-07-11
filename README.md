@@ -1,20 +1,16 @@
-# StringCalculator
+# Ex_Kata
 
-**TODO: Add description**
+Practice some basic coding with Elixir
 
-## Installation
+### Lessons
+- StringCalculator
+- Tennis
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `string_calculator` to your list of dependencies in `mix.exs`:
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-```elixir
-def deps do
-  [
-    {:string_calculator, "~> 0.1.0"}
-  ]
-end
-```
+Please make sure to update tests as appropriate.
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/string_calculator](https://hexdocs.pm/string_calculator).
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
