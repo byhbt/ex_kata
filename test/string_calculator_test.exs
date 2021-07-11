@@ -1,5 +1,6 @@
 defmodule StringCalculatorTest do
   use ExUnit.Case
+
   doctest StringCalculator
 
   @tag :skip
