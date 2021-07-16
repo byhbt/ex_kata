@@ -18,13 +18,13 @@ defmodule StringCalculator do
     |> String.splitter(delimiter)
     |> Enum.map(&String.to_integer(String.trim(&1)))
     |> check_negative()
-    |> Enum.reject(&(&1) < 0)
-    |> Enum.reject(&(&1) > 1_000)
+    |> Enum.reject(&(&1 < 0))
+    |> Enum.reject(&(&1 > 1_000))
     |> Enum.sum()
   end
 
   defp check_negative(list) do
-    negatives = list |> Enum.filter(&(&1) < 0)
+    negatives = list |> Enum.filter(&(&1 < 0))
 
     if negatives == [] do
       list
