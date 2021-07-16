@@ -12,18 +12,14 @@ defmodule StringCalculator do
   end
 
   def calc(string) do
+    delimiter = [",", "\n", "***", "/"]
+
     string
-    |> String.splitter([",", "\n", "***", "/"])
-    |> Enum.map(fn v ->
-      String.to_integer(String.trim(v))
-    end)
+    |> String.splitter(delimiter)
+    |> Enum.map(&String.to_integer(String.trim(&1)))
     |> check_negative()
-    |> Enum.reject(fn val -> 
-      val < 0
-    end)
-    |> Enum.reject(fn val ->
-      val > 1_000
-    end)
+    |> Enum.reject(&(&1) < 0)
+    |> Enum.reject(&(&1) > 1_000)
     |> Enum.sum()
   end
 
